@@ -1,0 +1,16 @@
+def stripHTMLMarkups(html):
+    tag = False
+    out = ""
+    for c in html:
+        if c is '<' and not tag: 
+            tag =True
+            continue 
+        elif c is '>' and tag : 
+            tag = False
+            continue 
+        if not tag : # print to the output only when in the non-tag state
+           out = out + c
+
+    return out
+
+print stripHTMLMarkup('<b>"We Live in the World of Chaos !"</b>')
