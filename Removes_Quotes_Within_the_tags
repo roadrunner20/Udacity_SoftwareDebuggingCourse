@@ -5,14 +5,14 @@ def remove_html_markup(s):
 
     for c in s:
     
-        if c == '<' and not quote:            // 8 to 11 lines check for tag or non-tag mode
+        if c == '<' and not quote:            # 8 to 11 lines check for tag or non-tag mode
             tag = True
         elif c == '>' and not quote:
             tag = False
-        elif ((c == '"' or c == "'") and tag):    // checks if the quotes are occuring withing in the tag mode
+        elif ((c == '"' or c == "'") and tag):    # checks if the quotes are occuring withing in the tag mode
             
-            quote = not quote                    // this will invert the quote status
-        elif not tag:                           // this condition stores everything which comes in non-tag section
+            quote = not quote                    # this will invert the quote status
+        elif not tag:                           #this condition stores everything which comes in non-tag section
             out = out + c
 
     return out
